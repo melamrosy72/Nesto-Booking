@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 import { Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { User } from './user.entity';
-import { Event } from './event.entity';
-import { CreateDateColumn } from 'typeorm';
-import { ManyToOne } from 'typeorm';
+import { CreateDateColumn, ManyToOne } from 'typeorm';
+import { Event } from '../../events/entities/event.entity';
+import { User } from '../../users/entities/user.entity';
+
 @Entity()
 export class Booking {
   @PrimaryGeneratedColumn()

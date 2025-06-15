@@ -8,6 +8,7 @@ import {
   Delete,
   Inject,
   UseGuards,
+  Req,
 } from '@nestjs/common';
 import { BookingService } from './booking.service';
 import { Logger } from 'winston';
@@ -29,7 +30,8 @@ export class BookingController {
   }
 
   @Get()
-  findAll() {
+  findAll(@Req() req: Request & { user: any }) {
+    console.log(req.user);
     this.logger.info('Getting all bookings', { context: 'BookingController' });
     return this.bookingService.findAll();
   }

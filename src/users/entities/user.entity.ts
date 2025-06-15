@@ -28,4 +28,5 @@ export class User {
 
   @UpdateDateColumn()
   updatedAt: Date;
+  bookings: any;
 }
